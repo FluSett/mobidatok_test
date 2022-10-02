@@ -61,7 +61,10 @@ class SignInProviderPage extends HookWidget {
         Consumer<ValidationModel>(
           builder: (context, validation, child) {
             return FilledButton(
-              onPressed: validation.validateSignIn()
+              onPressed: validation.validateSignIn(
+                emailController.text,
+                passwordController.text,
+              )
                   ? () => context
                       .read<AuthenticationProvider>()
                       .signInWithEmailAndPassword(
