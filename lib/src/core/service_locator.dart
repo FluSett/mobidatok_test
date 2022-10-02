@@ -1,8 +1,10 @@
 import 'package:get_it/get_it.dart';
+import 'package:mobidatok_test/src/feature/authentication/logic/authentication_provider.dart';
 
 import '../feature/authentication/data/authentication_repository.dart';
 import '../feature/authentication/logic/authentication_bloc.dart';
 import '../feature/sign_in/bloc/validation_cubit.dart';
+import '../feature/sign_in/bloc/validation_model.dart';
 import 'app_service.dart';
 import 'routes.dart';
 
@@ -22,5 +24,12 @@ void setUpSL() {
     ),
   );
 
+  getIt.registerLazySingleton<AuthenticationProvider>(
+    () => AuthenticationProvider(
+      getIt<AuthenticationRepository>(),
+    ),
+  );
+
   getIt.registerFactory<ValidationCubit>(() => ValidationCubit());
+  getIt.registerFactory<ValidationModel>(() => ValidationModel());
 }
