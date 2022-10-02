@@ -47,12 +47,18 @@ class WelcomePage extends StatelessWidget {
         ),
         const Divider(),
         OutlinedButton(
-          onPressed: () {},
+          onPressed: () => context.pushNamed(
+            routeExample,
+            params: {exampleName: routeSignInRiverpod},
+          ),
           child: const Text('Sign in with riverpod'),
         ),
         const SizedBox(height: 20),
         OutlinedButton(
-          onPressed: () {},
+          onPressed: () => context.pushNamed(
+            routeExample,
+            params: {exampleName: routeSignUpRiverpod},
+          ),
           child: const Text('Sign up with riverpod'),
         ),
       ],

@@ -1,20 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/constants.dart';
+
+final validationProvider = ChangeNotifierProvider<ValidationModel>((ref) {
+  return ValidationModel();
+});
 
 class ValidationModel extends ChangeNotifier {
   String? emailError;
   String? passwordError;
   String? confirmPasswordError;
 
-  bool validateSignIn() {
-    return emailError == null && passwordError == null;
+  bool validateSignIn(String email, String password) {
+    return emailError == null &&
+        email.isNotEmpty &&
+        passwordError == null &&
+        password.isNotEmpty;
   }
 
-  bool validateSignUp() {
+  bool validateSignUp(String email, String password, String confirmPassword) {
     return emailError == null &&
+        email.isNotEmpty &&
         passwordError == null &&
-        confirmPasswordError == null;
+        password.isNotEmpty &&
+        confirmPasswordError == null &&
+        confirmPassword.isNotEmpty;
   }
 
   void updateEmail(String email) {

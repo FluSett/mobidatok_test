@@ -5,8 +5,10 @@ import '../feature/home/widget/home_page.dart';
 import '../feature/not_found/widget/not_found_page.dart';
 import '../feature/sign_in/widget/sign_in_bloc_page.dart';
 import '../feature/sign_in/widget/sign_in_provider_page.dart';
+import '../feature/sign_in/widget/sign_in_riverpod_page.dart';
 import '../feature/sign_up/widget/sign_up_bloc_page.dart';
 import '../feature/sign_up/widget/sign_up_provider_page.dart';
+import '../feature/sign_up/widget/sign_up_riverpod_page.dart';
 import '../feature/welcome/widget/welcome_page.dart';
 import 'app_service.dart';
 
@@ -20,6 +22,8 @@ const String routeSignInBloc = 'sign-in-bloc';
 const String routeSignUpBloc = 'sign-up-bloc';
 const String routeSignInProvider = 'sign-in-provider';
 const String routeSignUpProvider = 'sign-up-provider';
+const String routeSignInRiverpod = 'sign-in-riverpod';
+const String routeSignUpRiverpod = 'sign-up-riverpod';
 
 Widget getExamplePage(String? name) {
   switch (name) {
@@ -31,6 +35,10 @@ Widget getExamplePage(String? name) {
       return const SignInProviderPage();
     case routeSignUpProvider:
       return const SignUpProviderPage();
+    case routeSignInRiverpod:
+      return const SignInRiverpodPage();
+    case routeSignUpRiverpod:
+      return const SignUpRiverpodPage();
     default:
       return const NotFoundPage();
   }
