@@ -1,9 +1,15 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:state_notifier/state_notifier.dart';
 
 import '../../../core/app_service.dart';
 import '../../../core/service_locator.dart';
 import '../data/authentication_repository.dart';
 import 'authentication_state.dart';
+
+final authenticationProvider =
+    StateNotifierProvider<AuthenticationProvider, AuthenticationState>((ref) {
+  return getIt<AuthenticationProvider>();
+});
 
 class AuthenticationProvider extends StateNotifier<AuthenticationState> {
   final IAuthenticationRepository _authenticationRepository;
