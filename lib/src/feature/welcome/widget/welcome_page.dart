@@ -31,12 +31,18 @@ class WelcomePage extends StatelessWidget {
         ),
         const Divider(),
         OutlinedButton(
-          onPressed: () {},
+          onPressed: () => context.pushNamed(
+            routeExample,
+            params: {exampleName: routeSignInProvider},
+          ),
           child: const Text('Sign in with provider'),
         ),
         const SizedBox(height: 20),
         OutlinedButton(
-          onPressed: () {},
+          onPressed: () => context.pushNamed(
+            routeExample,
+            params: {exampleName: routeSignUpProvider},
+          ),
           child: const Text('Sign up with provider'),
         ),
         const Divider(),
