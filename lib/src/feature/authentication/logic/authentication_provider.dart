@@ -59,5 +59,6 @@ class AuthenticationProvider extends StateNotifier<AuthenticationState> {
     await _authenticationRepository.signOut();
 
     appService.authState = false;
+    state = const AuthenticationState.initital();
   }
 }
