@@ -59,6 +59,8 @@ class AuthenticationBloc
       await _authenticationRepository.signOut();
 
       appService.authState = false;
+
+      emit(const AuthenticationState.initital());
     });
   }
 }
