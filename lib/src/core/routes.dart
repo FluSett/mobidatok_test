@@ -56,7 +56,6 @@ class AppRouter {
 
   late final _router = GoRouter(
     refreshListenable: appService,
-    debugLogDiagnostics: debugDisableShadows,
     routes: <GoRoute>[
       GoRoute(
         path: routeInitial,

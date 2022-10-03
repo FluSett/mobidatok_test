@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../core/app_service.dart';
 import '../../../core/service_locator.dart';
 import '../data/authentication_repository.dart';

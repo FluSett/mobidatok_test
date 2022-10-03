@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../core/widget/title.dart';
 import '../../home/widget/cart_buton.dart';
-import '../../home/widget/food_shop_list.dart';
 import 'food_list.dart';
 
 class CartPage extends StatefulWidget {
