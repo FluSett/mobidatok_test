@@ -56,6 +56,7 @@ class AppRouter {
 
   late final _router = GoRouter(
     refreshListenable: appService,
+    initialLocation: routeInitial,
     routes: <GoRoute>[
       GoRoute(
         path: routeInitial,
