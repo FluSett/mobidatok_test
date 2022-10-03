@@ -81,7 +81,7 @@ class SignUpProviderPage extends HookWidget {
         const SizedBox(height: 20),
         Consumer<ValidationModel>(
           builder: (context, validation, child) {
-            return FilledButton(
+            return OutlinedButton(
               onPressed: validation.validateSignUp(
                 emailController.text,
                 passwordController.text,

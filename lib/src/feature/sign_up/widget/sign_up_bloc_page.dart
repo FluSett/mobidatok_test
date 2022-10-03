@@ -78,7 +78,7 @@ class SignUpBlocPage extends StatelessWidget {
                   BlocSelector<ValidationCubit, ValidationState, bool>(
                 selector: (selectorState) => selectorState.validateSignUp(),
                 builder: (context, booleanState) {
-                  return FilledButton(
+                  return OutlinedButton(
                     onPressed: booleanState
                         ? () => context.read<AuthenticationBloc>().add(
                               AuthenticationEvent.registerWithEmailAndPassword(
