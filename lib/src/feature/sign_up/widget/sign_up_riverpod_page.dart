@@ -102,7 +102,7 @@ class SignUpRiverpodPage extends HookWidget {
                       ),
                     ),
                   );
-                  return FilledButton(
+                  return OutlinedButton(
                     onPressed: validationStatus
                         ? () => ref
                             .read(authenticationProvider.notifier)
