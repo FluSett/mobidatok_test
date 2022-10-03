@@ -3,6 +3,7 @@ import 'package:mobidatok_test/src/feature/authentication/logic/authentication_p
 
 import '../feature/authentication/data/authentication_repository.dart';
 import '../feature/authentication/logic/authentication_bloc.dart';
+import '../feature/remote_database/data/database_repository.dart';
 import '../feature/sign_in/bloc/validation_cubit.dart';
 import '../feature/sign_in/bloc/validation_model.dart';
 import 'app_service.dart';
@@ -16,6 +17,10 @@ void setUpSL() {
 
   getIt.registerLazySingleton<AuthenticationRepository>(
     () => AuthenticationRepository(),
+  );
+
+  getIt.registerLazySingleton<DatabaseRepository>(
+    () => DatabaseRepository(),
   );
 
   getIt.registerLazySingleton<AuthenticationBloc>(

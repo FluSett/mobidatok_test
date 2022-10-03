@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:state_notifier/state_notifier.dart';
 
 import '../../../core/app_service.dart';
 import '../../../core/service_locator.dart';

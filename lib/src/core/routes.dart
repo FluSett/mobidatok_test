@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../feature/cart/widget/cart_page.dart';
 import '../feature/home/widget/home_page.dart';
 import '../feature/not_found/widget/not_found_page.dart';
 import '../feature/sign_in/widget/sign_in_bloc_page.dart';
@@ -14,10 +15,12 @@ import 'app_service.dart';
 
 const String routeInitial = '/';
 const String routeWelcome = '/welcome';
-
-//Welcome examplesW
 const String exampleName = 'exampleName';
-const String routeExample = 'example/:$exampleName';
+
+const String routeCart = 'cart';
+
+//Welcome examples auth
+const String routeAuthExample = 'auth-example/:$exampleName';
 const String routeSignInBloc = 'sign-in-bloc';
 const String routeSignUpBloc = 'sign-up-bloc';
 const String routeSignInProvider = 'sign-in-provider';
@@ -59,6 +62,13 @@ class AppRouter {
         path: routeInitial,
         name: routeInitial,
         builder: (context, state) => const HomePage(),
+        routes: <GoRoute>[
+          GoRoute(
+            path: routeCart,
+            name: routeCart,
+            builder: (context, state) => const CartPage(),
+          ),
+        ],
       ),
       GoRoute(
         path: routeWelcome,
@@ -66,8 +76,8 @@ class AppRouter {
         builder: (context, state) => const WelcomePage(),
         routes: <GoRoute>[
           GoRoute(
-            path: routeExample,
-            name: routeExample,
+            path: routeAuthExample,
+            name: routeAuthExample,
             builder: (context, state) {
               final exampleName = state.params['exampleName'];
 
